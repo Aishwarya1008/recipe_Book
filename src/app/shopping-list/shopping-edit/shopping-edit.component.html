@@ -1,0 +1,16 @@
+<form (submit)="addItems()">
+  <div class="form" [formGroup]="formGroup">
+    <mat-form-field color="accent" style="margin: 2%; width: 60%">
+      <input matInput placeholder="Name" [formControl]="itemName">
+    </mat-form-field>
+    <mat-form-field color="accent" style="margin: 2%; width: 40%">
+      <input matInput placeholder="Amount" pattern="^[1-9]+[0-9]*$" [formControl]="itemAmount">
+    </mat-form-field>
+  </div>
+  <div class="button">
+    <button mat-stroked-button color="accent" style="margin: 2%; margin-bottom: 0px; margin-top: 0px" type="submit" [disabled]="formGroup.invalid">{{editMode ? 'Update' : 'Add'}}</button>
+    <button mat-stroked-button color="accent" style="margin: 2%; margin-bottom: 0px; margin-top: 0px" type="button" (click)="deleteItem()">Delete</button>
+    <button mat-stroked-button color="accent" style="margin: 2%; margin-bottom: 0px; margin-top: 0px" type="button" (click)="clearForm()">Clear</button>
+  </div>
+</form>
+

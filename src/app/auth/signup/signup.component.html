@@ -1,0 +1,12 @@
+
+  <form (submit)="onSubmit()" class="form">
+    <div [formGroup]="formGroup" class="form" >
+      <mat-form-field class="example-full-width" color="accent" style="width: 60%">
+        <input matInput placeholder="Email" type="email" [formControl]="email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" color="accent" style="width: 60%">
+        <input matInput placeholder="Password" type="password" [formControl]="password">
+      </mat-form-field>
+      <button mat-stroked-button color="accent" type="submit" [disabled]="formGroup.invalid">SignUp</button>
+    </div>
+  </form>

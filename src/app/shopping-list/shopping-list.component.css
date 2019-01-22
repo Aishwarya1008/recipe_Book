@@ -1,0 +1,9 @@
+.ing-border {
+  border: orange solid 1px;
+  margin: 1%;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

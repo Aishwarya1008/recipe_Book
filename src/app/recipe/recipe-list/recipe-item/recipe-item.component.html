@@ -1,0 +1,10 @@
+<div class="recipe-list" style="cursor: pointer" [routerLink]="[index]" routerLinkActive="active">
+  <div class="img">
+    <div class="desc">
+      <h4 style="margin: 0px; margin-bottom: 1px">{{recipe.name}}</h4>
+      <p style="margin: 0px; margin-top: 1px">{{recipe.description}}</p>
+    </div>
+    <span class="filler"></span>
+    <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" style="max-width: 50px; max-height: 50px">
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="header" style="height: 60px">
+  <h2 style="margin: 5px"><a class="link" routerLink="/">Recipe Book</a></h2>
+  <h4 style="margin-left: 10px"><a class="link" [routerLinkActive]="'active'" routerLink="/recipe">Recipe</a></h4>
+  <p style="margin-left: 5px">|</p>
+  <h4 style="margin-left: 5px"><a class="link" [routerLinkActive]="'active'" routerLink="/shopping-list">Shopping-list</a></h4>
+  <span class="filler"></span>
+
+    <h4 style="margin-left: 10px" *ngIf="!authService.isAuthenticated()"><a class="link" [routerLinkActive]="'active'" routerLink="/signup" style="margin-right: 10px">Register</a></h4>
+    <p *ngIf="!authService.isAuthenticated()">|</p>
+    <h4 style="margin-left: 10px" *ngIf="!authService.isAuthenticated()"><a class="link" [routerLinkActive]="'active'" routerLink="/signin">Login</a></h4>
+    <span style="width: 2%" *ngIf="!authService.isAuthenticated()"></span>
+
+  <h4 style="margin-right: 10px; cursor: pointer" *ngIf="authService.isAuthenticated()"><a class="link" [routerLinkActive]="'active'"  (click)="onLogout()">Logout</a></h4>
+
+  <button *ngIf="authService.isAuthenticated()" mat-button [matMenuTriggerFor]="menu">Manage</button>
+  <mat-menu #menu="matMenu" yPosition="below" [overlapTrigger]="false">
+    <button mat-menu-item><a (click)="onSaveData()">Save Data</a></button>
+    <button mat-menu-item><a (click)="onFetchData()">Fetch Data</a></button>
+  </mat-menu>
+</div>

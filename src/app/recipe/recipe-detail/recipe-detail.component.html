@@ -1,0 +1,20 @@
+<div *ngIf="recieveSelectedRecipe" class="detail">
+  <img src="{{recieveSelectedRecipe.imagePath}}" alt="{{recieveSelectedRecipe.name}}" style="height: 300px; width: 400px">
+  <h1>{{recieveSelectedRecipe.name}}</h1>
+  <button mat-stroked-button color="accent" [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu" yPosition="below" [overlapTrigger]="false">
+    <button mat-menu-item (click)="addToShoppingList(recieveSelectedRecipe.ingredients)"><a>To shopping list</a></button>
+    <button mat-menu-item><a (click)="editRecipe()">Edit Recipe</a></button>
+    <button mat-menu-item ><a (click)="deleteRecipe()">Delete Recipe</a></button>
+  </mat-menu>
+  <div class="desc">
+    <h4 style="margin: 0px">Description :</h4>
+    <p style="margin: 0px">{{recieveSelectedRecipe.description}}</p>
+  </div>
+  <div class="ingr">
+    <h4 style="margin: 0px">Ingredients :</h4>
+    <div style="width: 42%">
+      <p *ngFor="let ingri of recieveSelectedRecipe.ingredients" class="ing-border" style="text-align: center">{{ingri.name}}-{{ingri.amount}}</p>
+    </div>
+  </div>
+</div>

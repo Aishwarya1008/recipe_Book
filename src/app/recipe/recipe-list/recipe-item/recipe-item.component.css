@@ -1,0 +1,26 @@
+.img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.filler {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.recipe-list {
+  border: orange solid 1px;
+  margin-bottom: 5px;
+  /*border-width: 1px;*/
+}
+.active {
+  background-color: orange;
+  color: white;
+}
